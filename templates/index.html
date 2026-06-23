@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EyeScan AI - Advanced Ocular Diagnostics</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="blob"></div>
+    <div class="blob blob-2"></div>
+
+    <main class="main-container">
+        <div class="glass-card">
+            <header class="header-section">
+                <div class="icon-badge">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h1 class="main-title">
+                    Eye Disease <span class="gradient-text">Detection</span>
+                </h1>
+                <p class="subtitle">Advanced AI Ocular Analysis Assistant</p>
+            </header>
+
+            <!-- Main View -->
+            <div id="main-view" class="view-section">
+                <!-- Upload Area -->
+                <div id="drop-zone" class="upload-area">
+                    <input type="file" id="file-input" class="hidden-input" accept="image/*">
+                    
+                    <div id="preview-container" class="preview-overlay hidden">
+                        <img id="image-preview" src="" alt="Preview" class="preview-image">
+                        <button id="clear-image" class="clear-btn">
+                            <i class="fas fa-xmark"></i>
+                        </button>
+                    </div>
+
+                    <div id="upload-placeholder" class="upload-placeholder">
+                        <div class="upload-icon-wrapper">
+                            <i class="fas fa-cloud-arrow-up"></i>
+                        </div>
+                        <h3 class="upload-title">Choose an eye image</h3>
+                        <p class="upload-subtitle">PNG, JPG or JPEG (Max 5MB)</p>
+                    </div>
+                </div>
+
+                <!-- Action Button -->
+                <button id="predict-btn" class="predict-btn" disabled>
+                    <span>Analyze Image</span>
+                    <i class="fas fa-arrow-right"></i>
+                </button>
+
+                <!-- Security Badge -->
+                <div class="security-badge">
+                    <i class="fas fa-shield-halved"></i>
+                    <span>Privacy Encrypted & AI Powered</span>
+                </div>
+            </div>
+
+            <!-- Loading View -->
+            <div id="loading-view" class="view-section hidden">
+                <div class="loading-spinner">
+                    <div class="spinner-ring"></div>
+                    <i class="fas fa-microscope spinner-icon"></i>
+                </div>
+                <h3 class="loading-title">Analyzing Ocular Data...</h3>
+                <p class="loading-subtitle">Using advanced AI to scan for abnormalities</p>
+                <div class="progress-container">
+                    <div id="progress-bar" class="progress-bar"></div>
+                </div>
+            </div>
+
+            <!-- Result View -->
+            <div id="result-view" class="view-section hidden">
+                <div class="result-wrapper">
+                    <div class="result-image-box">
+                        <img id="result-image" src="" alt="Analyzed Image" class="result-image-display">
+                    </div>
+                    <div class="result-analysis-box">
+                        <div class="result-header">
+                            <h3 class="result-title">Analysis Result</h3>
+                            <button id="reset-btn" class="reset-btn">New Scan</button>
+                        </div>
+                        <div id="ai-response" class="ai-response-box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
